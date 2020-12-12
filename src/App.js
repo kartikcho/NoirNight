@@ -1,4 +1,5 @@
 import Landing from './views/Landing';
+import Play from './views/Play';
 import StarBox from './components/StarBox';
 
 import './globals.css';
@@ -6,7 +7,7 @@ import './globals.css';
 function App() {
   return (
     <>
-      <Landing />
+      <Play />
       <StarBox />
     </>
   );
