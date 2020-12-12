@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  background: transparent;
+  font-size: 1em;
+  border: 2px solid #fff;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  margin: 0 10px;
+  padding: 7px 15px;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.2s;
+}
+
+a {
+  transition: 0.2s;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  background: #fff;
+}
+
+a:focus {
+  outline: transparent;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 20%, #131131 0%, #000 100%);
+  scroll: none;
+  /* background:url("https://papers.co/wallpaper/papers.co-vf12-abstract-line-dark-minimal-graphic-pattern-36-3840x2400-4k-wallpaper.jpg"); 
+    
+    background-position: center;
+    background-size: cover; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+  font-weight: normal;
+  font-family: 'Fredoka One', cursive;
+  background: -webkit-linear-gradient(#fff, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  animation: name 3s infinite ease-in-out;
+}
+
+@keyframes name {
+  50% {
+    text-shadow: #fefefeb3 1px 0 10px;
+  }
+}
+
+@keyframes ima {
+  50% {
+    transform: scaleX(-1);
+  }
+}
+
+.det {
+  /* position: absolute;
+    bottom: 0;
+    left: 20px; */
+  display: none;
+}
+
+.btns {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.star-box div {
+  color: white;
+  position: absolute;
+  background-color: transparent;
+  border: 6px solid rgba(255, 2555, 255, 0);
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.star-box div:nth-child(1) {
+  top: 12%;
+  left: 42%;
+  animation: bkg 10s linear infinite;
+}
+
+.star-box div:nth-child(2) {
+  top: 70%;
+  left: 50%;
+  animation: bkg 7s linear infinite;
+}
+
+.star-box div:nth-child(3) {
+  top: 17%;
+  left: 6%;
+  animation: bkg 9s linear infinite;
+}
+
+.star-box div:nth-child(4) {
+  top: 20%;
+  left: 60%;
+  animation: bkg 10s linear infinite;
+}
+
+.star-box div:nth-child(5) {
+  top: 67%;
+  left: 10%;
+  animation: bkg 6s linear infinite;
+}
+
+.star-box div:nth-child(6) {
+  top: 80%;
+  left: 70%;
+  animation: bkg 12s linear infinite;
+}
+
+.star-box div:nth-child(7) {
+  top: 60%;
+  left: 80%;
+  animation: bkg 15s linear infinite;
+}
+
+.star-box div:nth-child(8) {
+  top: 32%;
+  left: 25%;
+  animation: bkg 16s linear infinite;
+}
+
+.star-box div:nth-child(9) {
+  top: 90%;
+  left: 25%;
+  animation: bkg 9s linear infinite;
+}
+
+.star-box div:nth-child(10) {
+  top: 20%;
+  left: 80%;
+  animation: bkg 5s linear infinite;
+}
+
+@keyframes bkg {
+  0% {
+    transform: scale(0) translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5) translateY(-90px) rotate(360deg);
+    opacity: 0;
+  }
+}
