@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import lightbulb from '../lightbulb.svg';
+import speak from '../speak.svg';
 
 export default function Play() {
   const [Speech, setSpeech] = useState('Lets get started detective!');
@@ -9,6 +10,13 @@ export default function Play() {
     <div>
       <h3 className="speech-input">Why was Blahaj kil?{InputQuestion}</h3>
       <h1 className="speech-output">"{Speech}"</h1>
+
+      <div class="voice-button">
+        <button class="voice-button-icon">
+          <img style={{ maxWidth: '40px' }} src={speak} alt="speak icon" />
+        </button>
+      </div>
+
       <div class="blockquote hint-box">
         <h1>Maybe try asking: Sample placeholder hint</h1>
         <h4>
@@ -19,6 +27,8 @@ export default function Play() {
           />
         </h4>
       </div>
+
+
       <div className="input-question">
         <input
           type="text"
