@@ -50,35 +50,24 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: stretch;
+  justify-content: space-evenly;
+  align-items: center;
   width: 90vw;
 }
 
-.result-left {
-  order: 1;
-  flex-basis: 100%;
-  max-height: 40vh;
+.result-container img {
+  width: 300px;
+  margin: 10px;
 }
 
-.result-middle {
-  order: 3;
-  flex-basis: 100%;
-  max-height: 40vh;
-  max-width: 200px;
+.result-container img:hover {
+  cursor: pointer;
+  filter: blur(4px);
 }
 
-.result-right {
-  order: 2;
-  flex-basis: 100%;
-  max-height: 40vh;
-}
-
-@media screen and (min-width: 600px) {
-  .result-container {
-    flex-wrap: nowrap;
-    width: 90vw;
-  }
+.result-btn {
+  text-align: center;
+  margin: 20px 0;
 }
 
 .glowing-text {

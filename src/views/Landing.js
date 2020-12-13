@@ -18,7 +18,9 @@ export default function Landing() {
         Bill recalls Mr. Smith calling the doctor over as he suffered from a
         severe chest pain. But Doctor Owl's car arrived at the mansion half an
         hour earlier than the body was discovered.
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
         With only this information to start with, figure out who's responsible
         for the murder of Mr. Smith in 2 minutes!
       </div>
