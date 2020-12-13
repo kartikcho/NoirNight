@@ -46,6 +46,43 @@ body {
   align-items: center;
 }
 
+.result-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 90vw;
+}
+
+.result-left {
+  order: 1;
+  background: red;
+  flex-basis: 100%;
+  height: 40vh;
+}
+
+.result-middle {
+  order: 3;
+  background: green;
+  flex-basis: 100%;
+  height: 40vh;
+}
+
+.result-right {
+  order: 2;
+  background: yellow;
+  flex-basis: 100%;
+  height: 40vh;
+}
+
+@media screen and (min-width:600px) {
+  .result-container {
+    flex-wrap: nowrap;
+    width: 90vw;
+  }
+}
+
 .glowing-text {
   font-size: 4em;
   text-align: center;
@@ -71,7 +108,7 @@ body {
 }
 
 .speech-output {
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
@@ -102,12 +139,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 .voice-button:after {
-  content: "";
+  content: '';
   position: absolute;
   z-index: 0;
   top: 0;
@@ -126,13 +163,19 @@ body {
   background: #fff;
   border-radius: 50%;
   border: none;
-  -webkit-transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
-  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
-  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
-  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), transform 200ms cubic-bezier(0.2, 0, 0.7, 1), -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+  -webkit-transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1),
+    -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1),
+    -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1),
+    transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1),
+    transform 200ms cubic-bezier(0.2, 0, 0.7, 1),
+    -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
 }
 .voice-button-icon:hover {
-  box-shadow: 0 0 1px 15px rgba(223, 92, 240, 0.4), 0 0 1px 30px rgba(223, 92, 240, 0.1), 0 0 1px 45px rgba(223, 92, 240, 0.1);
+  box-shadow: 0 0 1px 15px rgba(223, 92, 240, 0.4),
+    0 0 1px 30px rgba(223, 92, 240, 0.1), 0 0 1px 45px rgba(223, 92, 240, 0.1);
 }
 
 .input-question {
@@ -143,7 +186,7 @@ body {
   position: relative;
   font-family: 'Barlow Condensed', sans-serif;
   max-width: 620px;
-  margin: 80px auto;
+  margin: 40px auto;
   align-self: center;
 }
 

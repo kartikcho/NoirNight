@@ -8,10 +8,38 @@ import speak from '../speak.svg';
 
 export default function Play() {
   const { transcript, resetTranscript, listening } = useSpeechRecognition();
+  const [voiceSupport, setVoiceSupport] = useState(true);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [query, setQuery] = useState('');
   const [textQuery, setTextQuery] = useState('');
   const [audioBuffer, setAudioBuffer] = useState(undefined);
   const [response, setResponse] = useState('Lets get started detective!');
+
+  const countdown = () => {
+    let timerDuration = 60;
+    setInterval(() => {
+      if (timerDuration >= 0) {
+        timerDuration = timerDuration - 1;
+        setTimeLeft(timerDuration);
+      }
+    }, 1000);
+  };
+
+  const onKeyUpQuestion = (e) => {
+    e.preventDefault();
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+      console.log('Enter key pressed!!!!!');
+      setTextQuery(e.target.value);
+    }
+  };
+
+  useEffect(() => {
+    countdown();
+
+    setTimeout(() => {
+      alert('You Died');
+    }, 60000);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -61,48 +89,56 @@ export default function Play() {
   }, [query]);
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-    // Render some fallback content
-    // Disable the microphone button and render only the text input
+    setVoiceSupport(false);
   }
 
   return (
     <div>
       <h3 className="speech-input">{transcript}</h3>
       <h1 className="speech-output">"{response}"</h1>
-      <div className="voice-button">
-        <button
-          className="voice-button-icon"
-          onClick={() =>
-            SpeechRecognition.startListening({ language: 'en-IN' })
-          }
-        >
-          <img style={{ maxWidth: '40px' }} src={speak} alt="speak icon" />
-        </button>
-      </div>
+      {voiceSupport ? (
+        <div className="voice-button">
+          <button
+            className="voice-button-icon"
+            onClick={() =>
+              SpeechRecognition.startListening({ language: 'en-IN' })
+            }
+          >
+            <img style={{ maxWidth: '40px' }} src={speak} alt="speak icon" />
+          </button>
+        </div>
+      ) : (
+        <span>
+          Voice is only supported on Chrome. Switch browser for the best
+          experience or use the input box below.
+        </span>
+      )}
+
       {/* {listening && <div>Listening... (or some better wave animation) </div>} */}
       <div className="blockquote hint-box">
         <h1>Maybe try asking: Sample placeholder hint</h1>
         <h4>
-          <img
+          {/* <img
             style={{ maxWidth: '40px' }}
             src={lightbulb}
             alt="lightbulb icon"
-          />
+          /> */}
+          <span>{timeLeft}</span> Seconds Left
         </h4>
       </div>
       <div className="input-question">
         <input
           value={textQuery}
-          onChange={(e) => setTextQuery(e.target.value)}
+          onChange={(e) => onKeyUpQuestion(e)}
           type="text"
           className="question_input"
           id="name"
-          placeholder="Don't have a mic? Ask here!"
+          placeholder="Can't use a mic? Ask here!"
           required=""
           autoComplete="off"
         />
-        <label for="name" class="question_label">
-          Don't have a mic? Ask here!
+        <label htmlFor="name" className="question_label">
+          Can't use a mic? Ask here!
         </label>
       </div>
     </div>
