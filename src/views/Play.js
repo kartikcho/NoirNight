@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
-import lightbulb from '../lightbulb.svg';
-import speak from '../speak.svg';
+import speak from '../assets/speak.svg';
 
 export default function Play() {
   const { transcript, resetTranscript, listening } = useSpeechRecognition();
@@ -14,6 +14,7 @@ export default function Play() {
   const [textQuery, setTextQuery] = useState('');
   const [audioBuffer, setAudioBuffer] = useState(undefined);
   const [response, setResponse] = useState('Lets get started detective!');
+  const history = useHistory();
 
   const countdown = () => {
     let timerDuration = 60;
@@ -37,7 +38,7 @@ export default function Play() {
     countdown();
 
     setTimeout(() => {
-      alert('You Died');
+      history.push('/result');
     }, 60000);
   }, []);
 

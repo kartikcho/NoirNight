@@ -57,26 +57,24 @@ body {
 
 .result-left {
   order: 1;
-  background: red;
   flex-basis: 100%;
-  height: 40vh;
+  max-height: 40vh;
 }
 
 .result-middle {
   order: 3;
-  background: green;
   flex-basis: 100%;
-  height: 40vh;
+  max-height: 40vh;
+  max-width: 200px;
 }
 
 .result-right {
   order: 2;
-  background: yellow;
   flex-basis: 100%;
-  height: 40vh;
+  max-height: 40vh;
 }
 
-@media screen and (min-width:600px) {
+@media screen and (min-width: 600px) {
   .result-container {
     flex-wrap: nowrap;
     width: 90vw;
