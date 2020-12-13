@@ -5,10 +5,12 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
 import speak from '../assets/speak.svg';
+import hintsCollection from './hints';
 
 export default function Play() {
   const MAX_TIME = 120;
-  const { transcript, resetTranscript, listening } = useSpeechRecognition();
+  const HINTS_TIME = 30;
+  const { transcript, listening } = useSpeechRecognition();
   const [voiceSupport, setVoiceSupport] = useState(true);
   const [timeLeft, setTimeLeft] = useState(MAX_TIME);
   const [query, setQuery] = useState('');
@@ -16,6 +18,7 @@ export default function Play() {
   const [audioBuffer, setAudioBuffer] = useState(undefined);
   const [bars, setBars] = useState([]);
   const [response, setResponse] = useState('Lets get started detective!');
+  const [counter, setCounter] = useState(hintsCollection.length - 1);
   const history = useHistory();
 
   const countdown = () => {
@@ -30,14 +33,27 @@ export default function Play() {
     return () => clearInterval(timer);
   };
 
+  const hintsDropper = () => {
+    let timerDuration = HINTS_TIME;
+    const timer = setInterval(() => {
+      if (counter >= 0) {
+        setCounter((v) => v - 1);
+      }
+    }, timerDuration * 1000);
+
+    return () => clearInterval(timer);
+  };
+
   useEffect(() => {
     countdown();
+    hintsDropper();
 
     const timer = setTimeout(() => {
       history.push('/result');
     }, MAX_TIME * 1000);
 
     return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -149,7 +165,9 @@ export default function Play() {
       )}
 
       <div className="blockquote hint-box">
-        <h1>Maybe try asking: Sample placeholder hint</h1>
+        <h1>
+          Maybe try asking: <b>{hintsCollection[counter]}</b>
+        </h1>
         <h4>
           {/* <img
             style={{ maxWidth: '40px' }}
