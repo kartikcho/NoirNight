@@ -1,13 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-* {
+*{
   margin: 0;
   padding: 0;
   color: #fff;
 }
 
-a {
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 20%, #131131 0%, #000 100%);
+  overflow-y: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+a{
   color: #fff;
   background: transparent;
   font-size: 1em;
@@ -30,21 +43,6 @@ a:hover {
 a:focus {
   outline: transparent;
 }
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: radial-gradient(ellipse at 50% 20%, #131131 0%, #000 100%);
-  overflow-y: none;
-  /* background:url("https://papers.co/wallpaper/papers.co-vf12-abstract-line-dark-minimal-graphic-pattern-36-3840x2400-4k-wallpaper.jpg"); 
-    
-    background-position: center;
-    background-size: cover; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .result-container {
   display: flex;
@@ -53,6 +51,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   width: 90vw;
+  text-align: center;
 }
 
 .result-container img {
@@ -67,7 +66,7 @@ body {
 
 .result-btn {
   text-align: center;
-  margin: 20px 0;
+  margin-top: 40px;
 }
 
 .glowing-text {
@@ -106,7 +105,7 @@ body {
 }
 
 .speech-output {
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
@@ -177,6 +176,10 @@ body {
     0 0 1px 30px rgba(223, 92, 240, 0.1), 0 0 1px 45px rgba(223, 92, 240, 0.1);
 }
 
+.voice-button-icon:focus{
+ outline: transparent;
+}
+
 .input-question {
   margin-top: 50px;
   text-align: center;
@@ -197,7 +200,6 @@ body {
   line-height: 1;
   margin: 0;
   border: 2px solid #fff;
-  border: solid 2px;
   border-radius: 20px;
   padding: 15px;
 }
@@ -241,10 +243,9 @@ body {
   font-weight: 400;
   line-height: 1.2;
   margin: 0;
-  padding-top: 15px;
   z-index: 1;
-  margin-left: 150px;
-  padding-left: 12px;
+  margin-left: 130px;
+  padding: 25px 15px;
 }
 
 .hint-box h4:first-letter {
@@ -272,8 +273,12 @@ body {
   border: none;
   width: 60%;
   display: block;
-  border-bottom: 0.3rem solid transparent;
+  /* border-bottom: 0.3rem solid transparent; */
   transition: all 0.3s;
+}
+
+.question_input:focus{
+    outline: transparent;
 }
 
 .question_input:placeholder-shown + .question_label {
