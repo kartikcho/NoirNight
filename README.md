@@ -35,3 +35,15 @@ We learnt how to work with Chrome Speech API and used DialogFlow successfully fo
 Increase accessibility and make it also available as a Google Action!
 
 *Currently only supports Chrome Browser*
+
+### Special Mentions:
+
+Although they don't appear in the commit history, they worked on critical aspects like the story and design.
+
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/palak-sethi"><img src="https://avatars2.githubusercontent.com/u/51605219?s=460&u=b50ef5d344e0ff7d0458f2b22cf6b11a053d8079&v=4" width="100px;" alt=""/><br /><sub><b>Palak Sethi</b></sub></a></td>
+    <td align="center"><a href="https://github.com/lilykhan786"><img src="https://avatars1.githubusercontent.com/u/47777673?s=460&u=b5531e40e1b9a31078e024f861116678fecaa826&v=4" width="100px;" alt=""/><br /><sub><b>Lily Khan</b></sub></a></td>
+  </tr>
+</table>
