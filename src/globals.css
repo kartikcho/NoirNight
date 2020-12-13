@@ -46,6 +46,41 @@ body {
   align-items: center;
 }
 
+.result-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 90vw;
+}
+
+.result-left {
+  order: 1;
+  flex-basis: 100%;
+  max-height: 40vh;
+}
+
+.result-middle {
+  order: 3;
+  flex-basis: 100%;
+  max-height: 40vh;
+  max-width: 200px;
+}
+
+.result-right {
+  order: 2;
+  flex-basis: 100%;
+  max-height: 40vh;
+}
+
+@media screen and (min-width: 600px) {
+  .result-container {
+    flex-wrap: nowrap;
+    width: 90vw;
+  }
+}
+
 .glowing-text {
   font-size: 4em;
   text-align: center;
@@ -71,7 +106,7 @@ body {
 }
 
 .speech-output {
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
@@ -150,7 +185,7 @@ body {
   position: relative;
   font-family: 'Barlow Condensed', sans-serif;
   max-width: 620px;
-  margin: 80px auto;
+  margin: 40px auto;
   align-self: center;
 }
 

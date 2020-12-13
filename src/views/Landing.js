@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Landing() {
   return (
     <>
       <h1 className="glowing-text">Murder at the Blahaj Mansion.</h1>
       <div className="btns">
-        <a href="#" class="play">
-          Start Playing
-        </a>
-        <a className="info" href="#">
-          More Info
+        <Link to="/play" class="play">
+          Let's Play!
+        </Link>
+        <a className="info" href="https://github.com/kartikcho/MatBM">
+          Star us on GitHub
         </a>
       </div>
     </>
