@@ -10,15 +10,28 @@ export default function Play() {
   const { transcript, resetTranscript, listening } = useSpeechRecognition();
   const [query, setQuery] = useState('');
   const [textQuery, setTextQuery] = useState('');
+  const [audioBuffer, setAudioBuffer] = useState(undefined);
   const [response, setResponse] = useState('Lets get started detective!');
 
   useEffect(() => {
     const timer = setInterval(() => {
       setQuery(transcript);
-    }, 800);
+    }, 1500);
 
     return () => clearInterval(timer);
   }, [transcript]);
+
+  useEffect(() => {
+    if (audioBuffer) {
+      const context = new AudioContext() || new window.webkitAudioContext();
+      context.decodeAudioData(audioBuffer, (buffer) => {
+        const bufferSource = context.createBufferSource();
+        bufferSource.buffer = buffer;
+        bufferSource.connect(context.destination);
+        bufferSource.start();
+      });
+    }
+  }, [audioBuffer]);
 
   useEffect(() => {
     (async () => {
@@ -35,8 +48,13 @@ export default function Play() {
 
         const res = await axios(config);
         if (res && res.data.success) {
-          console.log(res.data);
-          setResponse(JSON.stringify(res.data.body));
+          const {
+            fulfillmentText,
+            outputAudio: { data },
+          } = res.data.data[0];
+          const arrBuffer = new Uint8Array(data).buffer;
+          setAudioBuffer(arrBuffer);
+          setResponse(fulfillmentText);
         }
       }
     })();
@@ -54,7 +72,9 @@ export default function Play() {
       <div className="voice-button">
         <button
           className="voice-button-icon"
-          onClick={SpeechRecognition.startListening({ language: 'en-IN' })}
+          onClick={() =>
+            SpeechRecognition.startListening({ language: 'en-IN' })
+          }
         >
           <img style={{ maxWidth: '40px' }} src={speak} alt="speak icon" />
         </button>
