@@ -93,6 +93,17 @@ body {
   animation: name 3s infinite ease-in-out;
 }
 
+.intro {
+  width: 40vw;
+  margin: 1em;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: 100;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
 .speech-input {
   font-size: 2em;
   text-align: center;
