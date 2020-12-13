@@ -366,6 +366,8 @@ body {
   }
 }
 
+/* Voice Animation Bar */
+
 .voice-coder {
   position: relative;
   height: 5vh;
@@ -594,3 +596,43 @@ body {
     height: 80%;
   }
 } */
+
+/* Text Field Area with submit */
+
+.search-box,
+.close-icon,
+.search-wrapper {
+  position: relative;
+  padding: 10px;
+}
+.close-icon {
+  border: 1px solid transparent;
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.close-icon:after {
+  content: '->';
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-color: #3eff5f;
+  z-index: 1;
+  right: 35px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 2px;
+  border-radius: 50%;
+  text-align: center;
+  color: rgb(28, 255, 122);
+  font-weight: normal;
+  font-size: 12px;
+  cursor: pointer;
+}
+.search-box:not(:valid) ~ .close-icon {
+  display: none;
+}

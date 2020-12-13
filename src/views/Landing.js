@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Landing() {
   return (
     <>
-      <h1 className="glowing-text">Murder at the Blahaj Mansion.</h1>
+      <h1 className="glowing-text">Noir Night.</h1>
       <div className="btns">
         <Link to="/play" class="play">
           Let's Play!

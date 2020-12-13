@@ -7,9 +7,10 @@ import SpeechRecognition, {
 import speak from '../assets/speak.svg';
 
 export default function Play() {
+  const MAX_TIME = 120;
   const { transcript, resetTranscript, listening } = useSpeechRecognition();
   const [voiceSupport, setVoiceSupport] = useState(true);
-  const [timeLeft, setTimeLeft] = useState(60);
+  const [timeLeft, setTimeLeft] = useState(MAX_TIME);
   const [query, setQuery] = useState('');
   const [textQuery, setTextQuery] = useState('');
   const [audioBuffer, setAudioBuffer] = useState(undefined);
@@ -18,29 +19,25 @@ export default function Play() {
   const history = useHistory();
 
   const countdown = () => {
-    let timerDuration = 60;
-    setInterval(() => {
+    let timerDuration = MAX_TIME;
+    const timer = setInterval(() => {
       if (timerDuration >= 0) {
         timerDuration = timerDuration - 1;
         setTimeLeft(timerDuration);
       }
     }, 1000);
-  };
 
-  const onKeyUpQuestion = (e) => {
-    e.preventDefault();
-    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-      console.log('Enter key pressed!!!!!');
-      setTextQuery(e.target.value);
-    }
+    return () => clearInterval(timer);
   };
 
   useEffect(() => {
     countdown();
 
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       history.push('/result');
-    }, 60000);
+    }, MAX_TIME * 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -165,7 +162,12 @@ export default function Play() {
       <div className="input-question">
         <input
           value={textQuery}
-          onChange={(e) => onKeyUpQuestion(e)}
+          onKeyUp={(e) => {
+            if (e.key === 'Enter') {
+              setQuery(textQuery);
+            }
+          }}
+          onChange={(e) => setTextQuery(e.target.value)}
           type="text"
           className="question_input"
           id="name"
@@ -174,7 +176,7 @@ export default function Play() {
           autoComplete="off"
         />
         <label htmlFor="name" className="question_label">
-          Can't use a mic? Ask here!
+          Press Enter to submit
         </label>
       </div>
     </div>
