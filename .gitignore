@@ -116,3 +116,6 @@ dist
 .pnp.*
 
 build
+
+#replit file
+.replit
