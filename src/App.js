@@ -9,7 +9,7 @@ import './globals.css';
 
 function App() {
   return (
-    <>
+    <div className="main">
       <Router>
         <Switch>
           <Route exact path="/result">
@@ -24,7 +24,7 @@ function App() {
         </Switch>
         <StarBox />
       </Router>
-    </>
+    </div>
   );
 }
 

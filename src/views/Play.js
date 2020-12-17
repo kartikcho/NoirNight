@@ -138,7 +138,7 @@ export default function Play() {
   }
 
   return (
-    <div>
+    <div className="main">
       <h3 className="speech-input">{transcript}</h3>
       <h1 className="speech-output">"{response}"</h1>
       {voiceSupport ? (
