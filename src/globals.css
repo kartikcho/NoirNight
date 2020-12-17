@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins&display=swap');
 
 *{
   margin: 0;
@@ -10,14 +9,21 @@
 body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   background: radial-gradient(ellipse at 50% 20%, #131131 0%, #000 100%);
-  overflow-y: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main{
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  padding: 50px 0;
 }
 
 a{
@@ -28,7 +34,7 @@ a{
   cursor: pointer;
   letter-spacing: 1px;
   border-radius: 3px;
-  margin: 0 10px;
+  margin: 10px;
   padding: 7px 15px;
   font-family: 'Poppins', sans-serif;
   transition: 0.2s;
@@ -55,8 +61,9 @@ a:focus {
 }
 
 .result-container img {
-  width: 300px;
+  width: 280px;
   margin: 10px;
+  transition: .2s;
 }
 
 .result-container img:hover {
@@ -69,8 +76,25 @@ a:focus {
   margin-top: 40px;
 }
 
+.result-container p{
+  position: relative;
+  top: -300px;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  text-shadow: -1px 1px rgb(216, 216, 216);
+  transition: .2s ease-in;
+  opacity: .0;
+}
+
+.result-container img:hover + p{
+ opacity: 1;
+  transition: .2s ease-in;
+}
+
 .glowing-text {
   font-size: 4em;
+  padding: 20px;
   text-align: center;
   font-weight: normal;
   font-family: 'Fredoka One', cursive;
@@ -82,7 +106,7 @@ a:focus {
 }
 
 .intro {
-  width: 40vw;
+  width: 60vw;
   margin: 1em;
   line-height: 1.5em;
   font-size: 1.2em;
@@ -92,11 +116,23 @@ a:focus {
   overflow: hidden;
 }
 
+.result-header {
+  font-size: 3em;
+  text-align: center;
+  font-weight: normal;
+  font-family: 'Fredoka One', cursive;
+  background: -webkit-linear-gradient(#fff, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
 .speech-input {
   font-size: 2em;
   text-align: center;
   font-weight: normal;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fredoka One', cursive;
   background: -webkit-linear-gradient(#fff, #7e1671);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -105,7 +141,7 @@ a:focus {
 }
 
 .speech-output {
-  font-size: 2em;
+  font-size: 2.5em;
   text-align: center;
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
@@ -124,10 +160,13 @@ a:focus {
 .btns {
   margin-top: 50px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .voice-button {
-  margin-top: 50px;
+  margin: 50px 0;
   padding-bottom: 25px;
   position: relative;
   width: 100%;
@@ -226,14 +265,6 @@ a:focus {
   bottom: -3px;
   left: 50px;
   z-index: 2;
-}
-
-@media all and (min-width: 600px) {
-  .hint-box h1 {
-    font-size: 1.2rem;
-    line-height: 1.2;
-    padding: 25px;
-  }
 }
 
 .hint-box h4 {
@@ -567,40 +598,6 @@ a:focus {
   opacity: 0.2;
 }
 
-/* @keyframes bounce-001 {
-  0% {
-    height: 100%;
-  }
-  50% {
-    height: 50%;
-  }
-  100% {
-    height: 100%;
-  }
-}
-@keyframes bounce-002 {
-  0% {
-    height: 100%;
-  }
-  80% {
-    height: 30%;
-  }
-  100% {
-    height: 100%;
-  }
-} */
-/* @keyframes bounce-003 {
-  0% {
-    height: 80%;
-  }
-  30% {
-    height: 20%;
-  }
-  100% {
-    height: 80%;
-  }
-} */
-
 /* Text Field Area with submit */
 
 .search-box,
@@ -640,3 +637,21 @@ a:focus {
 .search-box:not(:valid) ~ .close-icon {
   display: none;
 }
+
+
+@media all and (min-width: 600px) {
+  .hint-box h1 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    padding: 25px;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
