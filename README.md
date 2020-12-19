@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Noir Night
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![pvu00fsk](https://user-images.githubusercontent.com/48270786/102016159-87030980-3d85-11eb-9dba-c391820fd9f0.png)
 
-## Available Scripts
+![image](https://user-images.githubusercontent.com/48270786/102016214-d21d1c80-3d85-11eb-9ad6-eb25bdf438ea.png)
 
-In the project directory, you can run:
+## Introduction
 
-### `yarn start`
+It's 2:30 am when you arrive at the Smith Mansion. Elizabeth, Bill and Doctor Owl are standing around the bed with the dead body of Mr. Smith.  Your partner who arrived early on the scene gives you a rundown of the suspects: Elizabeth the wife of the deceased, Bill his butler and Doctor Owl their family doctor for the last 3 months. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Autopsy report says Smith was choked to death. However, the only person next to the body when it was found was Elizabeth, who lay there crying. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Bill recalls Mr. Smith calling the doctor over as he suffered from a severe chest pain. But Doctor Owl's car arrived at the mansion half an hour earlier than the body was discovered. 
 
-### `yarn test`
+With only this information to start with, figure out who's responsible for the murder of Mr. Smith in 2 minutes!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## What it does
 
-### `yarn build`
+An interactive, voice powered murder mystery that uses Google's Dialogflow to react to user questions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Challenges we ran into
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Getting the Chrome Speech Recognition API to work and streaming audio to server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Accomplishments that we're proud of
 
-### `yarn eject`
+Finishing the hack completely in time, creating a unique mini mystery together and testing it among people!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## What we learned
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+We learnt how to work with Chrome Speech API and used DialogFlow successfully for the first time!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## What's next for Noir Night
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Increase accessibility and make it also available as a Google Action!
 
-## Learn More
+*Currently only supports Chrome Browser*
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Special Mentions:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Although they don't appear in the commit history, they worked on critical aspects like the story and design.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/palak-sethi"><img src="https://avatars2.githubusercontent.com/u/51605219?s=460&u=b50ef5d344e0ff7d0458f2b22cf6b11a053d8079&v=4" width="100px;" alt=""/><br /><sub><b>Palak Sethi</b></sub></a></td>
+    <td align="center"><a href="https://github.com/lilykhan786"><img src="https://avatars1.githubusercontent.com/u/47777673?s=460&u=b5531e40e1b9a31078e024f861116678fecaa826&v=4" width="100px;" alt=""/><br /><sub><b>Lily Khan</b></sub></a></td>
+  </tr>
+</table>
