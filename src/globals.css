@@ -302,7 +302,7 @@ a:focus {
   border-radius: 0.2rem;
   background-color: rgb(255, 255, 255);
   border: none;
-  width: 60%;
+  width: 300px;
   display: block;
   transition: all 0.3s;
 }
