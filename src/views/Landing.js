@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from 'react-speech-recognition';
 
 export default function Landing() {
   return (
@@ -23,12 +26,21 @@ export default function Landing() {
         <br />
         With only this information to start with, figure out who's responsible
         for the murder of Mr. Smith in 2 minutes!
+        {!SpeechRecognition.browserSupportsSpeechRecognition() && (
+          <>
+            <br />
+            <br />
+            <i>Currently only supported on Chrome :(</i>
+          </>
+        )}
       </div>
       <div className="btns">
-        <Link to="/play" class="play">
-          Let's Play!
-        </Link>
-        <a className="info" href="https://github.com/kartikcho/MatBM">
+            {SpeechRecognition.browserSupportsSpeechRecognition() && (
+              <Link to="/play" class="play">
+                Let's Play!
+              </Link>
+        )}
+        <a className="info" target="_blank" rel="noreferrer" href="https://github.com/kartikcho/MatBM">
           Star us on GitHub
         </a>
       </div>

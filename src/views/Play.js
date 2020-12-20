@@ -133,10 +133,6 @@ export default function Play() {
     })();
   }, [query]);
 
-  if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-    setVoiceSupport(false);
-  }
-
   return (
     <div className="main">
       <h3 className="speech-input">{transcript}</h3>
@@ -169,11 +165,6 @@ export default function Play() {
           Maybe try asking: <b>{hintsCollection[counter]}</b>
         </h1>
         <h4>
-          {/* <img
-            style={{ maxWidth: '40px' }}
-            src={lightbulb}
-            alt="lightbulb icon"
-          /> */}
           <span>{timeLeft}</span> Seconds Left
         </h4>
       </div>
