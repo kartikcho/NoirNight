@@ -35,12 +35,17 @@ export default function Landing() {
         )}
       </div>
       <div className="btns">
-            {SpeechRecognition.browserSupportsSpeechRecognition() && (
-              <Link to="/play" class="play">
-                Let's Play!
-              </Link>
+        {SpeechRecognition.browserSupportsSpeechRecognition() && (
+          <Link to="/play" class="play">
+            Let's Play!
+          </Link>
         )}
-        <a className="info" target="_blank" rel="noreferrer" href="https://github.com/kartikcho/MatBM">
+        <a
+          className="info"
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/kartikcho/MatBM"
+        >
           Star us on GitHub
         </a>
       </div>
