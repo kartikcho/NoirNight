@@ -11,7 +11,6 @@ export default function Play() {
   const MAX_TIME = 120;
   const HINTS_TIME = 30;
   const { transcript, listening } = useSpeechRecognition();
-  const [voiceSupport, setVoiceSupport] = useState(true);
   const [timeLeft, setTimeLeft] = useState(MAX_TIME);
   const [query, setQuery] = useState('');
   const [textQuery, setTextQuery] = useState('');
@@ -137,7 +136,7 @@ export default function Play() {
     <div className="main">
       <h3 className="speech-input">{transcript}</h3>
       <h1 className="speech-output">"{response}"</h1>
-      {voiceSupport ? (
+      
         <div className="voice-button">
           <button
             className="voice-button-icon"
@@ -148,13 +147,7 @@ export default function Play() {
             <img style={{ maxWidth: '40px' }} src={speak} alt="speak icon" />
           </button>
         </div>
-      ) : (
-        <span>
-          Voice is only supported on Chrome. Switch browser for the best
-          experience or use the input box below.
-        </span>
-      )}
-      {listening && voiceSupport && (
+      {listening && (
         <div className="voice-coder">
           <Visualizer bars={bars} />
         </div>
